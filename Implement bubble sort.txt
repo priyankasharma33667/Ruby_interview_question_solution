@@ -1,0 +1,24 @@
+def bubble_sort(arr)
+  n = arr.length
+
+  for i in 0..n-1
+    for j in 0..n-i-2
+      if arr[j] > arr[j+1]
+        arr[j], arr[j+1] = arr[j+1], arr[j]
+      end
+    end
+  end
+
+  return arr
+end
+
+The bubble_sort method takes one argument: an array arr to be sorted. 
+It uses nested loops to compare adjacent pairs of elements in the array and swap them if they are in the wrong order. 
+The outer loop runs n-1 times, where n is the length of the array, since each pass of the loop "bubbles up" the largest unsorted element 
+to the end of the array.
+
+The inner loop runs from the first element to the n-i-2th element, 
+since after each pass the last i elements of the array are guaranteed to be sorted. Within the inner loop,
+ it compares the current element with the next element and swaps them if they are in the wrong order.
+
+After the loops have finished running, the method returns the sorted array.

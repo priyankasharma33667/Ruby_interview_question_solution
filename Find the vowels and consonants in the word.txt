@@ -1,0 +1,68 @@
+s = 'priyanka'
+# @v = ''
+# @c = ''
+# p = s.split('')
+# p.each do |n| 
+#     n == 'a' || n == 'e' || n == 'i' || n == 'o' || n == 'u' ? @v << n
+#     : @c << n
+# end
+# #puts @c
+# puts @v
+
+
+
+
+#a.include?(b)
+s = 'priyanka'
+@v = ''
+@c = ''
+a = ['a','e','i','o','u']
+p = s.split('')
+p.each do |n|
+    a.include?(n) ? @v << n : @c << n
+end
+puts @c
+puts @v
+
+def vowelscons(string)
+    @v = ''
+    @c = ''
+    a = ['a','e','i','o','u']
+    p = string.split('')
+    p.each do |n|
+        a.include?(n) ? @v << n : @c << n
+    end
+end
+vowelscons('priyanka')
+puts @c
+
+
+def vowelsconst(string)
+    @v = ''
+    @c = ''
+    a = "aeiou"
+    p = string.split('')
+    p.each do |n|
+        if a.include?(n)
+            @v << n
+        else
+            @c << n
+        end
+    end
+end
+vowelsconst('priyanka')
+puts @v
+def vowelsconst(string)
+ @v = ''
+ @c = ''
+a = "aeiou"
+p = string.split('')
+p.map { |n| a.include?(n)? @v << n : @c << n}
+end
+vowelsconst('priyanka')
+puts @c
+
+
+
+
+    

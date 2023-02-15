@@ -1,0 +1,26 @@
+# Assume we have two models: User and Comment, with a foreign key comment.user_id
+class User < ApplicationRecord
+  has_many :comments
+end
+
+class Comment < ApplicationRecord
+  belongs_to :user
+end
+
+# Query to find all users and their comments
+users = User.left_outer_joins(:comments)
+            .select('users., comments.')
+            .where('comments.body IS NOT NULL')
+            .order('users.id')
+
+# Iterate over the users and their comments
+users.each do |user|
+  puts "User: #{user.name}"
+  if user.comments.any?
+    user.comments.each do |comment|
+      puts "  Comment: #{comment.body}"
+    end
+  else
+    puts "  No comments"
+  end
+end

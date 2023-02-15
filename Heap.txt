@@ -1,0 +1,70 @@
+class MaxHeap
+  attr_accessor :heap
+
+  def initialize
+    @heap = []
+  end
+
+  def insert(val)
+    # Add the new element to the end of the array
+    @heap << val
+
+    # Bubble up the new element until the heap property is restored
+    bubble_up(@heap.length - 1)
+  end
+
+  def delete_max
+    # Save the root node (max element)
+    max = @heap[0]
+
+    # Replace the root node with the last element in the heap
+    @heap[0] = @heap.pop
+
+    # Bubble down the new root node until the heap property is restored
+    bubble_down(0)
+
+    return max
+  end
+
+  private
+
+  def bubble_up(index)
+    parent_index = (index - 1) / 2
+
+    # Swap the new element with its parent if the new element is greater than the parent
+    if index > 0 && @heap[index] > @heap[parent_index]
+      @heap[index], @heap[parent_index] = @heap[parent_index], @heap[index]
+      bubble_up(parent_index)
+    end
+  end
+
+  def bubble_down(index)
+    left_child_index = 2 * index + 1
+    right_child_index = 2 * index + 2
+    largest_index = index
+
+    # Find the index of the largest element among the parent and its two children
+    if left_child_index < @heap.length && @heap[left_child_index] > @heap[largest_index]
+      largest_index = left_child_index
+    end
+    if right_child_index < @heap.length && @heap[right_child_index] > @heap[largest_index]
+      largest_index = right_child_index
+    end
+
+    # Swap the parent with the largest child if the parent is not the largest element
+    if index != largest_index
+      @heap[index], @heap[largest_index] = @heap[largest_index], @heap[index]
+      bubble_down(largest_index)
+    end
+  end
+end
+
+
+
+heap = MaxHeap.new
+heap.insert(5)
+heap.insert(3)
+heap.insert(8)
+heap.insert(1)
+heap.insert(6)
+puts heap.heap.inspect  # Output: [8, 6, 5, 1, 3]

@@ -1,0 +1,25 @@
+arr = [1,2,3,4,5,6,7]
+i = 0
+large = 0
+while i < arr.size
+    if large < arr[i]
+        large = arr[i];
+    end
+    i = i+1
+end
+puts large
+
+
+def highest(arr)
+    i = 0
+    @large = 0
+    while i < arr.size
+        if @large < arr[i]
+            @large = arr[i]
+        end
+       i = i +1
+    end
+end
+arr = [1,2,3,4]
+highest(arr)
+puts @large

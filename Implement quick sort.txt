@@ -1,0 +1,34 @@
+def quick_sort(arr)
+  if arr.length <= 1
+    return arr
+  end
+
+  pivot = arr[arr.length/2]
+  left = []
+  right = []
+
+  arr.each do |element|
+    if element < pivot
+      left << element
+    elsif element > pivot
+      right << element
+    end
+  end
+
+  return quick_sort(left) + [pivot] + quick_sort(right)
+end
+arr = [2,1,4,3,7,6,9,8]
+p quick_sort (arr)
+
+The quick_sort method takes one argument: an array arr to be sorted.
+ It first checks if the length of the array is 1 or less, in which case it is already sorted, 
+so it just returns the array. Otherwise,
+ it selects a pivot element from the array, in this case the element at index arr.length/2.
+
+It then creates two empty arrays, left and right, 
+and iterates over the elements in arr, adding them to either the left or right array depending on 
+whether they are less than or greater than the pivot element.
+
+The method then returns the concatenation of the recursively sorted left array, 
+the pivot element, and the recursively sorted right array, resulting in a fully sorted array. 
+sThis process is repeated recursively on each sub-array until the entire array is sorted.

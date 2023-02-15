@@ -1,0 +1,16 @@
+def linear_search(arr, target)
+  arr.each_with_index do |item, index|
+    if item == target
+      return index
+    end
+  end
+  return -1
+end
+
+
+
+The linear_search method takes two arguments: an array arr and a target value to search for. 
+It iterates through each element in the array using the each_with_index method,
+ and checks whether the current element matches the target value. 
+If it finds a match, it returns the index of the element in the array.
+ If it searches through the entire array and doesn't find a match, it returns -1 to indicate that the target value was not found.

@@ -1,0 +1,13 @@
+# string1 = 'priyanka'
+# string2 = 'prince'
+# if string1 == string2
+#     puts 'equal'
+# else
+#     puts 'unequal'
+# end
+
+def campare_string(string1,string2)
+    string1 == string2
+    return true
+end
+puts campare_string('priyanka','priyanka')

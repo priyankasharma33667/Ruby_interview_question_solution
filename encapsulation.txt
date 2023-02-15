@@ -1,0 +1,23 @@
+class Car
+  def initialize(make, model, year)
+    @make = make
+    @model = model
+    @year = year
+  end
+  
+  def start_engine
+    check_oil_level
+    ignite_spark_plug
+    puts "Engine started"
+  end
+  
+  private
+  
+  def check_oil_level
+    puts "Checking oil level"
+  end
+  
+  def ignite_spark_plug
+    puts "Igniting spark plug"
+  end
+end

@@ -1,0 +1,29 @@
+# s = 'priyanka'
+    # b = s.length
+    # while b >= 0
+    #     print s[b]
+    #     b = b-1
+    # end
+    
+    # s = "asdfghjkl"
+    # len = s.length
+    # i = len - 1
+    # @revname = ""
+    # while i >= 0
+    #   @revname << s[i]
+    #   i-=1
+    # #   puts @revname
+    #  end
+    #  puts @revname
+    
+    # def reverse(string)
+    #     len = string.length
+    #     i = len -1
+    #     @revname = ""
+    #     while i >= 0
+    #         @revname << string[i]
+    #         i-=1
+    #     end
+    # end
+    # reverse('priyanka')
+    # puts @revname

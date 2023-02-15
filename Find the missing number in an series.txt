@@ -1,0 +1,14 @@
+# Example series of numbers
+series = [1, 2, 3, 4, 6, 7, 8, 9, 10]
+
+# Calculate the sum of the series of numbers using the arithmetic sum formula
+n = series.length + 1
+expected_sum = (n * (n + 1)) / 2
+
+# Calculate the actual sum of the numbers in the series
+actual_sum = series.sum
+
+# The missing number is the difference between the expected sum and the actual sum
+missing_number = expected_sum - actual_sum
+
+puts missing_number  # Output: 5

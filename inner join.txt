@@ -1,0 +1,13 @@
+users = [
+  { id: 1, name: "John", age: 25 },
+  { id: 2, name: "Jane", age: 30 },
+  { id: 3, name: "Bob", age: 40 }
+]
+orders = [
+  { id: 1, user_id: 2, total: 100 },
+  { id: 2, user_id: 1, total: 50 },
+  { id: 3, user_id: 2, total: 75 }
+]
+
+# Inner join
+inner_join = users.product(orders).select { |user, order| user[:id] == order[:user_id] }

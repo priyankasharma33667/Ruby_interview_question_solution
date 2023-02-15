@@ -1,0 +1,28 @@
+Ruby has a built-in Matrix class in its standard library that provides various methods for matrix manipulation. 
+Here are some examples of matrix manipulation in Ruby:
+
+Creating a matrix:
+require 'matrix'
+
+matrix = Matrix[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+Accessing elements in a matrix:
+
+element = matrix[0, 1]  # 2
+row = matrix.row(1)  # Vector[4, 5, 6]
+column = matrix.column(2)  # Vector[3, 6, 9]
+
+Performing arithmetic operations on matrices:
+matrix1 = Matrix[[1, 2], [3, 4]]
+matrix2 = Matrix[[5, 6], [7, 8]]
+
+sum = matrix1 + matrix2
+difference = matrix1 - matrix2
+product = matrix1 * matrix2
+
+Transposing a matrix:
+transpose = matrix.transpose
+
+Determinant and inverse of a matrix:
+determinant = matrix.det
+inverse = matrix.inverse
+

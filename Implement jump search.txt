@@ -1,0 +1,38 @@
+def jump_search(arr, x)
+  n = arr.length
+  step = Math.sqrt(n).floor
+  prev = 0
+
+  # Jumping ahead by 'step' until the element at the current index is less than 'x'
+  while arr[[step, n].min - 1] < x
+    prev = step
+    step += Math.sqrt(n).floor
+    # If we've jumped past the end of the array, the element doesn't exist
+    return -1 if prev >= n
+  end
+
+  # Doing a linear search for 'x' starting at the previous index
+  while arr[prev] < x
+    prev += 1
+    # If we've reached the index we started at after the first loop, the element doesn't exist
+    return -1 if prev == [step, n].min
+  end
+
+  # If the element at the current index is 'x', we've found it
+  return prev if arr[prev] == x
+
+  # If we've reached this point, the element doesn't exist
+  return -1
+end
+
+
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+x = 7
+
+result = jump_search(arr, x)
+
+if result == -1
+  puts "Element not found in array"
+else
+  puts "Element found at index #{result}"
+end

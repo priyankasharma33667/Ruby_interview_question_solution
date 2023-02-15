@@ -1,0 +1,31 @@
+# arr  = [1,2,3,4,5,6,7,8,9]
+# even = []
+# odd = []
+# arr.each {|n|  n % 2 == 0 ?  even.push(n) : odd.push(n) }
+# puts odd
+
+
+# def oddeven (array)
+#     even = []
+#     odd = []
+#     array.each {|n| n%2 == 0 ?  even.push(n) : odd.push(n) }
+#     # return even
+#     return odd
+# end
+# oddeven([1,2,3,4,5])
+#  puts even
+
+def oddeven (array)
+    even = []
+    odd = []
+    array.each do |n|
+        if n % 2== 0
+            even.push(n)
+        else
+            odd.push(n)
+        end
+    end
+    puts even
+end
+arr = [1,2,3,4,5,6]
+oddeven(arr)

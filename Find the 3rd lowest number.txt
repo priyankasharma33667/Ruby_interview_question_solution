@@ -1,0 +1,5 @@
+arr = [3, 5, 1, 8, 4, 9, 2, 7, 6]
+
+third_lowest = arr.sort[2]
+
+puts third_lowest  # Output: 3

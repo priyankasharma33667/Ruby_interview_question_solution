@@ -1,0 +1,17 @@
+# Assume we have two tables 'users' and 'posts' with a foreign key 'user_id' in 'posts' table
+
+class User < ActiveRecord::Base
+  has_many :posts
+end
+
+class Post < ActiveRecord::Base
+  belongs_to :user
+end
+
+# Perform a left outer join to find all users and their associated posts, including users who have no posts
+User.left_outer_join(:posts).select('users.*, posts.title')
+
+
+  
+# Perform a right outer join to find all posts and their associated users, including posts that have no associated user
+Post.right_outer_join(:user).select('posts.*, users.name')

@@ -1,0 +1,16 @@
+def selection_sort(arr)
+    (0..arr.length-1).each do |i|
+        min_index = i
+        
+        (i+1..arr.length - 1).each do |j|
+            if arr[j] < arr[min_index]
+                min_index = j
+            end
+        end
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+    end
+    
+    arr
+end
+arr = [1,2,34,7,9]
+puts selection_sort(arr)     
